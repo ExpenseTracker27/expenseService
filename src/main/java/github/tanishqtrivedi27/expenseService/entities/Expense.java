@@ -30,8 +30,12 @@ public class Expense {
     private Timestamp createdAt;
 
     @PrePersist
-    @PreUpdate
-    private void generateExternalId() {
-        this.externalId = UUID.randomUUID().toString();
+    private void prePersist() {
+        if (this.externalId == null) {
+            this.externalId = UUID.randomUUID().toString();
+        }
+        if (this.createdAt == null) {
+            this.createdAt = new Timestamp(System.currentTimeMillis());
+        }
     }
 }

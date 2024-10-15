@@ -19,7 +19,7 @@ public class ExpenseDeserializer implements Deserializer<ExpenseDTO> {
         ObjectMapper objectMapper = new ObjectMapper();
         ExpenseDTO expenseDTO = null;
         try {
-            expenseDTO = objectMapper.readValue(s, ExpenseDTO.class);
+            expenseDTO = objectMapper.readValue(bytes, ExpenseDTO.class);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
