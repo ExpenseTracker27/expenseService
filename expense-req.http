@@ -1,6 +1,7 @@
 ### test kafka queue
 POST http://localhost:5000/insight/v1/message
 Content-Type: Application/json
+X-User-ID: rtyuiobnm-jhvgh-7890h0-bnm
 
 {
   "message": "You spent Rs.120 on ICICI bank card for starbucks coffee"

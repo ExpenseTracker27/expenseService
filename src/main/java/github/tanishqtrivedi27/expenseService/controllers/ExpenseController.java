@@ -2,7 +2,6 @@ package github.tanishqtrivedi27.expenseService.controllers;
 
 import github.tanishqtrivedi27.expenseService.models.ExpenseDTO;
 import github.tanishqtrivedi27.expenseService.services.ExpenseService;
-import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,7 @@ public class ExpenseController {
         this.expenseService = expenseService;
     }
 
-    @GetMapping("/expense/v1")
+    @GetMapping("expense/v1/expense")
     public ResponseEntity<List<ExpenseDTO>> getExpenses(@RequestParam("user_id") String userId) {
         try {
             List<ExpenseDTO> expenseDTOList = expenseService.getExpense(userId);
@@ -29,8 +28,8 @@ public class ExpenseController {
         }
     }
 
-    @PostMapping("/expense/v1")
-    public ResponseEntity<?> addExpense(ExpenseDTO expenseDTO){
+    @PostMapping("expense/v1/expense")
+    public ResponseEntity<?> createExpense(ExpenseDTO expenseDTO){
         try{
             expenseService.createExpense(expenseDTO);
             return new ResponseEntity<>(HttpStatus.CREATED);
