@@ -30,7 +30,7 @@ public class ExpenseController {
     }
 
     @PostMapping("expense/v1/expense")
-    public ResponseEntity<?> createExpense(ExpenseDTO expenseDTO){
+    public ResponseEntity<?> createExpense(@RequestBody ExpenseDTO expenseDTO){
         try{
             expenseService.createExpense(expenseDTO);
             return new ResponseEntity<>(HttpStatus.CREATED);
