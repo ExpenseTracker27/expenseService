@@ -2,6 +2,7 @@ package github.tanishqtrivedi27.expenseService.controllers;
 
 import github.tanishqtrivedi27.expenseService.models.ExpenseDTO;
 import github.tanishqtrivedi27.expenseService.services.ExpenseService;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class ExpenseController {
     }
 
     @GetMapping("expense/v1/expense")
-    public ResponseEntity<List<ExpenseDTO>> getExpenses(@RequestParam("user_id") String userId) {
+    public ResponseEntity<List<ExpenseDTO>> getExpenses(@RequestHeader("X-User-ID") @NonNull String userId) {
         try {
             List<ExpenseDTO> expenseDTOList = expenseService.getExpense(userId);
             return new ResponseEntity<>(expenseDTOList, HttpStatus.OK);
