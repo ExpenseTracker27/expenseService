@@ -1,5 +1,3 @@
-distributed lock
-// Todo: Make it transactional, and check if duplicate event (Handle idempotency)
+1. distributed lock // Todo: Make it transactional, and check if duplicate event (Handle idempotency)
 
-
-implement routes for update and find between dates
+2. implement routes for update and find between dates
