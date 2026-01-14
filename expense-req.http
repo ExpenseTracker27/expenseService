@@ -1,0 +1,36 @@
+### test kafka queue
+POST http://localhost:8000/insight/v1/message
+Content-Type: Application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YdCI6MTcyOTc4NTI5NSwiZXhwIjoxNzI5Nzg4ODk1fQ.p6V2JY_gSq2J_2iGYhAZSqtSWLHR7WpzfHPoyKK98MQ
+
+{
+  "message": "You spent Rs.120 on ICICI bank card for starbucks coffee"
+}
+
+### create new user
+POST http://localhost:3001/auth/v1/signup
+Content-Type: Application/json
+
+{
+  "username": "tanishq3",
+  "password": "Abgrgr@",
+  "email": "t@gmail.com",
+  "first_name": "tanishq",
+  "last_name": "trivedi",
+  "phone_number":5432456543
+}
+
+### get expense
+GET http://localhost:8000/expense/v1/expense
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5pc2hxMyIsImlhdCI6MTcyOTc4NTI5NSwiZXhwIjoxNzI5Nzg4ODk1fQ.p6V2JY_gSq2J_2iGYhAZSqtSWLHR7WpzfHPoyKK98MQ
+
+### post expense
+POST http://localhost:8000/expense/v1/expense
+Content-Type: Application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5pc2hxMyIsImlhdCI6MTcyOTc4NTI5NSwiZXhwIjoxNzI5Nzg4ODk1fQ.p6V2JY_gSq2J_2iGYhAZSqtSWLHR7WpzfHPoyKK98MQ
+
+{
+  "amount": "7654",
+  "user_id": "d021f065-a1bf-49e1-abe4-0ca876b30bcd",
+  "merchant": "ICICI bank"
+}
